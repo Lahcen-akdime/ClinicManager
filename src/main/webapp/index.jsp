@@ -61,7 +61,7 @@
         <a href="#fonctionnalites" aria-label="Rechercher une fonctionnalité" class="hidden h-10 w-10 items-center justify-center rounded-full border border-neutral-300 hover:bg-neutral-100 sm:inline-flex">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
         </a>
-        <a href="${pageContext.request.contextPath}/auth/login.jsp" class="hidden rounded-full border border-neutral-300 px-5 py-2.5 text-sm font-medium hover:bg-neutral-100 sm:inline-block">Login</a>
+        <a href="login" class="hidden rounded-full border border-neutral-300 px-5 py-2.5 text-sm font-medium hover:bg-neutral-100 sm:inline-block">Login</a>
         <a href="register" class="rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white hover:bg-neutral-800">Register</a>
         <button id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-neutral-300 lg:hidden">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -76,7 +76,7 @@
         <li><a href="#securite" class="block">Sécurité</a></li>
         <li><a href="#tarifs" class="block">Tarifs</a></li>
         <li><a href="#faq" class="block">FAQ</a></li>
-        <li><a href="${pageContext.request.contextPath}/login.jsp" class="block font-medium">Login</a></li>
+        <li><a href="login" class="block font-medium">Login</a></li>
       </ul>
     </div>
   </header>
@@ -334,7 +334,7 @@
       <p class="mx-auto mt-5 max-w-md text-sm text-neutral-300">Créez votre compte en quelques minutes et organisez votre première semaine de rendez-vous.</p>
       <div class="mt-8 flex flex-wrap justify-center gap-3">
         <a href="register" class="rounded-full bg-white px-7 py-3.5 text-xs font-medium tracking-widest text-black uppercase hover:bg-neutral-200">Register</a>
-        <a href="${pageContext.request.contextPath}/login.jsp" class="rounded-full border border-white px-7 py-3.5 text-xs font-medium tracking-widest uppercase hover:bg-white/10">Login</a>
+        <a href="login" class="rounded-full border border-white px-7 py-3.5 text-xs font-medium tracking-widest uppercase hover:bg-white/10">Login</a>
       </div>
     </div>
   </section>

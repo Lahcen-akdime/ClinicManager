@@ -15,9 +15,8 @@ public class UserRepoJpaImpl implements UserRepository {
     private String findByEmailQuery = "SELECT u FROM User u WHERE u.email = :email";
 
     @Override
-    public User save(String name, String lastName, String email, String password, Role userRole) {
+    public User save(User user) {
         EntityManager entityManager = JpaConnection.getEntityManager() ;
-        User user = new User(name, lastName, userRole, email, password) ;
         try {
         entityManager.getTransaction().begin();
         entityManager.persist(user);

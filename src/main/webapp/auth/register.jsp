@@ -203,14 +203,10 @@
                 <label for="groupeSanguin" class="lbl">Groupe sanguin</label>
                 <select id="groupeSanguin" name="groupeSanguin" class="field" aria-describedby="err-groupeSanguin">
                   <option value="">Choisir…</option>
-                  <option value="A_POSITIF" ${param.groupeSanguin == 'A_POSITIF' ? 'selected' : ''}>A+</option>
-                  <option value="A_NEGATIF" ${param.groupeSanguin == 'A_NEGATIF' ? 'selected' : ''}>A-</option>
-                  <option value="B_POSITIF" ${param.groupeSanguin == 'B_POSITIF' ? 'selected' : ''}>B+</option>
-                  <option value="B_NEGATIF" ${param.groupeSanguin == 'B_NEGATIF' ? 'selected' : ''}>B-</option>
-                  <option value="AB_POSITIF" ${param.groupeSanguin == 'AB_POSITIF' ? 'selected' : ''}>AB+</option>
-                  <option value="AB_NEGATIF" ${param.groupeSanguin == 'AB_NEGATIF' ? 'selected' : ''}>AB-</option>
-                  <option value="O_POSITIF" ${param.groupeSanguin == 'O_POSITIF' ? 'selected' : ''}>O+</option>
-                  <option value="O_NEGATIF" ${param.groupeSanguin == 'O_NEGATIF' ? 'selected' : ''}>O-</option>
+                  <option value="A" ${param.groupeSanguin == 'A' ? 'selected' : ''}>A</option>
+                  <option value="B" ${param.groupeSanguin == 'B' ? 'selected' : ''}>B</option>
+                  <option value="AB" ${param.groupeSanguin == 'AB' ? 'selected' : ''}>AB</option>
+                  <option value="O" ${param.groupeSanguin == 'O' ? 'selected' : ''}>O</option>
                 </select>
                 <p id="err-groupeSanguin" class="err" aria-live="polite"></p>
               </div>
@@ -219,11 +215,11 @@
               <span id="genre-label" class="lbl">Genre</span>
               <div class="flex flex-wrap gap-3">
                 <label class="cursor-pointer">
-                  <input type="radio" name="genre" value="HOMME" class="peer sr-only" ${param.genre == 'HOMME' ? 'checked' : ''}>
+                  <input type="radio" name="genre" value="MALE" class="peer sr-only" ${param.genre == 'MALE' ? 'checked' : ''}>
                   <span class="inline-block rounded-full border border-neutral-300 px-6 py-2.5 text-sm transition peer-checked:border-black peer-checked:bg-black peer-checked:text-white peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-black hover:bg-neutral-100 peer-checked:hover:bg-black">Homme</span>
                 </label>
                 <label class="cursor-pointer">
-                  <input type="radio" name="genre" value="FEMME" class="peer sr-only" ${param.genre == 'FEMME' ? 'checked' : ''}>
+                  <input type="radio" name="genre" value="FEMALE" class="peer sr-only" ${param.genre == 'FEMALE' ? 'checked' : ''}>
                   <span class="inline-block rounded-full border border-neutral-300 px-6 py-2.5 text-sm transition peer-checked:border-black peer-checked:bg-black peer-checked:text-white peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-black hover:bg-neutral-100 peer-checked:hover:bg-black">Femme</span>
                 </label>
               </div>
