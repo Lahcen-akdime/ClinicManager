@@ -1,11 +1,20 @@
 package org.clinicmanager.clinicmanager.Model;
 
+import jakarta.persistence.*;
 import org.clinicmanager.clinicmanager.Enum.Genre;
 import org.clinicmanager.clinicmanager.Enum.GroupSuinguin;
+import org.clinicmanager.clinicmanager.Enum.Role;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
-public class Patient extends User{
+@Entity
+@Table(name = "patients")
+public class Patient {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id ;
 
     private String phone ;
     private String cin ;
@@ -14,14 +23,20 @@ public class Patient extends User{
     private String adress ;
     private GroupSuinguin groupSuinguin ;
 
-    public Patient(String name, String lastName, String email, String password, String phone, LocalDate date_de_naissance, String cin, Genre genre, String adress, GroupSuinguin groupSuinguin) {
-        super(name, lastName, email, password);
+    @OneToOne
+    @JoinColumn(name = "user_id",referencedColumnName = "id",unique = true,nullable = false)
+    private User user ;
+
+    protected Patient(){}
+
+    public Patient(String phone, String cin, LocalDate date_de_naissance, Genre genre, String adress, GroupSuinguin groupSuinguin, User user) {
         this.phone = phone;
-        this.date_de_naissance = date_de_naissance;
         this.cin = cin;
+        this.date_de_naissance = date_de_naissance;
         this.genre = genre;
         this.adress = adress;
         this.groupSuinguin = groupSuinguin;
+        this.user = user;
     }
 
     public String getPhone() {
