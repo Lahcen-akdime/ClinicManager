@@ -2,6 +2,7 @@ package org.clinicmanager.clinicmanager.Model;
 
 import jakarta.persistence.*;
 import org.clinicmanager.clinicmanager.Enum.Role;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.util.UUID;
 
@@ -24,6 +25,8 @@ public class User {
     @Column(unique = true,nullable = false)
     private String email ;
     private String password ;
+
+    private Boolean isActive  = true ;
 
     public User(){}
 
@@ -67,6 +70,8 @@ public class User {
         return userRole;
     }
 
+
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -90,5 +95,11 @@ public class User {
                 '}';
     }
 
+    public Boolean getActive() {
+        return isActive;
+    }
 
+    public void setActive(Boolean active) {
+        isActive = active;
+    }
 }

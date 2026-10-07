@@ -10,6 +10,7 @@
         <class>org.clinicmanager.clinicmanager.Model.User</class>
         <class>org.clinicmanager.clinicmanager.Model.Patient</class>
         <class>org.clinicmanager.clinicmanager.Model.Doctor</class>
+        <class>org.clinicmanager.clinicmanager.Model.Departement</class>
         <properties>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.show_sql" value="true"/>

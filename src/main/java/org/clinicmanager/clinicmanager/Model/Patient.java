@@ -3,10 +3,8 @@ package org.clinicmanager.clinicmanager.Model;
 import jakarta.persistence.*;
 import org.clinicmanager.clinicmanager.Enum.Genre;
 import org.clinicmanager.clinicmanager.Enum.GroupSuinguin;
-import org.clinicmanager.clinicmanager.Enum.Role;
 
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Entity
 @Table(name = "patients")
@@ -45,5 +43,33 @@ public class Patient {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getCin() {
+        return cin;
+    }
+
+    public LocalDate getDate_de_naissance() {
+        return date_de_naissance;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public GroupSuinguin getGroupSuinguin() {
+        return groupSuinguin;
+    }
+
+    public User getUser() {
+        return user;
     }
 }

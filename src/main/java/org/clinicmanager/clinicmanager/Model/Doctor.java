@@ -14,9 +14,9 @@ public class Doctor {
     private Long id ;
 
     @Column(unique = true,nullable = false)
-    public String matricule ;
+    private String matricule ;
 
-    public String titre ;
+    private String titre ;
 
     @OneToOne
     @JoinColumn(name = "user_id",referencedColumnName = "id",unique = true,nullable = false)
@@ -30,6 +30,22 @@ public class Doctor {
         this.matricule = matricule;
         this.titre = titre;
         this.user = user;
+    }
+
+    public String getMatricule() {
+        return matricule;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitre() {
+        return titre;
+    }
+
+    public User getUser() {
+        return user;
     }
 
 }

@@ -23,8 +23,8 @@ import java.util.Optional;
 public class AuthService {
 
     private static UserRepoJpaImpl userRepoJpa = new UserRepoJpaImpl() ;
-    private static PatientRepoJpaImpl patientRepoJpa = new PatientRepoJpaImpl() ;
-    private static DoctorRepoJpaImpl doctorRepoJpa = new DoctorRepoJpaImpl() ;
+    private static PatientService patientService = new PatientService() ;
+    private static DoctorService doctorService = new DoctorService() ;
 
     public User register(HttpServletRequest request)throws IOException{
         String name = request.getParameter("name") ;
@@ -71,7 +71,7 @@ public class AuthService {
         String matricule = request.getParameter("matricule") ;
         String titre = request.getParameter("titre") ;
         Doctor doctor = new Doctor(matricule,titre,user) ;
-        doctorRepoJpa.save(doctor) ;
+        doctorService.save(doctor);
     }
     public static void savePatient(HttpServletRequest request,User user){
         String phone = request.getParameter("phone") ;
@@ -81,7 +81,7 @@ public class AuthService {
         String adress = request.getParameter("adresse") ;
         GroupSuinguin groupSuinguin = GroupSuinguin.valueOf(request.getParameter("groupeSanguin")) ;
         Patient patient = new Patient(phone,cin,date_de_naissance,genre,adress,groupSuinguin,user) ;
-        patientRepoJpa.save(patient) ;
+        patientService.save(patient) ;
     }
 
 }

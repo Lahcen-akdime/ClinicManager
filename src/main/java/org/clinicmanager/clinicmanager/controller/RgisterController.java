@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import org.clinicmanager.clinicmanager.Enum.Role;
 import org.clinicmanager.clinicmanager.Model.User;
 import org.clinicmanager.clinicmanager.service.AuthService;
 
@@ -27,8 +29,8 @@ public class RgisterController extends HttpServlet {
 
     public void doPost(HttpServletRequest request,HttpServletResponse response)throws IOException,ServletException{
         User user = authService.register(request) ;
-        //PrintWriter out = response.getWriter() ;
-        //out.println(request.getParameter("role").toUpperCase());
+        HttpSession session = request.getSession() ;
+        session.setAttribute("email",request.getParameter("email"));
         request.getRequestDispatcher(user.getUserRole().name().toLowerCase()+
                                     "/Dashboard.jsp").forward(request,response) ;
     }
