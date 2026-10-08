@@ -7,23 +7,29 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.clinicmanager.clinicmanager.Enum.Role;
+import org.clinicmanager.clinicmanager.Model.Specialite;
 import org.clinicmanager.clinicmanager.Model.User;
 import org.clinicmanager.clinicmanager.service.AuthService;
+import org.clinicmanager.clinicmanager.service.SpecialtyService;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "register",value = "/register")
 public class RgisterController extends HttpServlet {
 
     private String message;
     private AuthService authService = new AuthService() ;
+    private SpecialtyService specialtyService = new SpecialtyService() ;
 
     public void init() {
         message = "register page!";
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException , ServletException , FileNotFoundException {
+        List<Specialite> specialites = specialtyService.getAll() ;
+        request.setAttribute("specialites",specialites);
         request.getRequestDispatcher("auth/register.jsp").forward(request,response);
     }
 

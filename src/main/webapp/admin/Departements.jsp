@@ -40,10 +40,10 @@
         </a>
         <nav class="adm-nav">
             <a href="${pageContext.request.contextPath}/admin/Dashboard" class="adm-link"><svg width="20" height="20" aria-hidden="true"><use href="#i-dash"/></svg>Dashboard</a>
-            <a href="${pageContext.request.contextPath}/admin/patients" class="adm-link"><svg width="20" height="20" aria-hidden="true"><use href="#i-users"/></svg>Patients</a>
-            <a href="${pageContext.request.contextPath}/admin/doctors" class="adm-link"><svg width="20" height="20" aria-hidden="true"><use href="#i-steth"/></svg>Médecins</a>
-            <a href="${pageContext.request.contextPath}/admin/specialities" class="adm-link"><svg width="20" height="20" aria-hidden="true"><use href="#i-tag"/></svg>Spécialités</a>
-            <a href="${pageContext.request.contextPath}/admin/departments" class="adm-link is-active" aria-current="page"><svg width="20" height="20" aria-hidden="true"><use href="#i-building"/></svg>Départements</a>
+            <a href="${pageContext.request.contextPath}/admin/Patients" class="adm-link"><svg width="20" height="20" aria-hidden="true"><use href="#i-users"/></svg>Patients</a>
+            <a href="${pageContext.request.contextPath}/admin/Doctors" class="adm-link"><svg width="20" height="20" aria-hidden="true"><use href="#i-steth"/></svg>Médecins</a>
+            <a href="${pageContext.request.contextPath}/admin/Specialities" class="adm-link"><svg width="20" height="20" aria-hidden="true"><use href="#i-tag"/></svg>Spécialités</a>
+            <a href="${pageContext.request.contextPath}/admin/departements" class="adm-link is-active" aria-current="page"><svg width="20" height="20" aria-hidden="true"><use href="#i-building"/></svg>Départements</a>
         </nav>
         <div class="adm-user">
             <div class="adm-user-row">

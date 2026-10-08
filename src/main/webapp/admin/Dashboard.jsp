@@ -58,9 +58,9 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Dashboard</a></li>
       <li><a href="${pageContext.request.contextPath}/admin/Patients" class="nav-link">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.5 6.5 0 0 1 3.5 5.8"/></svg>Patients</a></li>
-      <li><a href="${pageContext.request.contextPath}/admin/doctors" class="nav-link">
+      <li><a href="${pageContext.request.contextPath}/admin/Doctors" class="nav-link">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v6a4 4 0 0 0 8 0V3M4 3h4M12 3h4"/><path d="M10 13v2a5 5 0 0 0 10 0v-1"/><circle cx="20" cy="12" r="2"/></svg>Médecins</a></li>
-      <li><a href="${pageContext.request.contextPath}/admin/specialities" class="nav-link">
+      <li><a href="${pageContext.request.contextPath}/admin/Specialities" class="nav-link">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5M3 17l9 5 9-5"/></svg>Spécialités</a></li>
       <li><a href="${pageContext.request.contextPath}/admin/departements" class="nav-link">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M16 9h2a2 2 0 0 1 2 2v10M2 21h20M8 7h4M8 11h4M8 15h4"/></svg>Départements</a></li>
@@ -130,7 +130,7 @@
       </article>
       <article class="fade-up rounded-3xl bg-orange-100/70 p-5 transition hover:-translate-y-1" style="--d:.25s">
         <div class="flex h-11 w-11 items-center justify-center rounded-full bg-white"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
-        <p class="mt-5 font-serif text-5xl leading-none"><span data-count="${not empty totalUsers ? totalUsers : 1337}">${not empty totalUsers ? totalUsers : 1337}</span></p>
+        <p class="mt-5 font-serif text-5xl leading-none"><span>${totalUsers}</span></p>
         <p class="mt-1.5 text-sm text-neutral-700">Utilisateurs</p>
         <span data-growth="" class="mt-3 inline-block rounded-full px-2.5 py-1 text-xs font-medium"></span>
       </article>

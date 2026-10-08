@@ -106,16 +106,16 @@
                 <a href="${pageContext.request.contextPath}/admin/Dashboard" class="nav-link">Dashboard</a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/admin/patients" aria-current="page" class="flex items-center gap-3 rounded-full bg-black px-4 py-3 text-sm font-medium text-white">Patients</a>
+                <a href="${pageContext.request.contextPath}/admin/Patients" aria-current="page" class="flex items-center gap-3 rounded-full bg-black px-4 py-3 text-sm font-medium text-white">Patients</a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/admin/doctors" class="nav-link">Médecins</a>
+                <a href="${pageContext.request.contextPath}/admin/Doctors" class="nav-link">Médecins</a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/admin/specialities" class="nav-link">Spécialités</a>
+                <a href="${pageContext.request.contextPath}/admin/Specialities" class="nav-link">Spécialités</a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/admin/departments" class="nav-link">Départements</a>
+                <a href="${pageContext.request.contextPath}/admin/departements" class="nav-link">Départements</a>
             </li>
         </ul>
     </nav>

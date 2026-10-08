@@ -7,11 +7,12 @@ import jakarta.persistence.*;
 public class Specialite {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id ;
 
     private String name ;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "departement_id" , referencedColumnName = "id" , unique = true , nullable = false)
     private Departement departement ;
 

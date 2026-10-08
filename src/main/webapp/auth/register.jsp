@@ -59,7 +59,7 @@
       </a>
       <div class="flex items-center gap-3">
         <a href="${pageContext.request.contextPath}/index.jsp" class="text-sm text-neutral-600 underline-offset-4 hover:text-black hover:underline">Retour à l'accueil</a>
-        <a href="${pageContext.request.contextPath}/login.jsp" class="rounded-full border border-neutral-300 px-5 py-2.5 text-sm font-medium hover:bg-neutral-100">Login</a>
+        <a href="${pageContext.request.contextPath}/login" class="rounded-full border border-neutral-300 px-5 py-2.5 text-sm font-medium hover:bg-neutral-100">Login</a>
       </div>
     </nav>
   </header>
@@ -243,16 +243,14 @@
               </div>
               <div>
                 <label for="titre" class="lbl">Titre / spécialité</label>
-                <input id="titre" name="titre" type="text" list="titres" autocomplete="off" class="field" aria-describedby="err-titre" value="<c:out value='${param.titre}'/>">
-                <datalist id="titres">
-                  <option value="Médecin généraliste"></option>
-                  <option value="Pédiatre"></option>
-                  <option value="Cardiologue"></option>
-                  <option value="Dermatologue"></option>
-                  <option value="Gynécologue"></option>
-                  <option value="Ophtalmologue"></option>
-                  <option value="Dentiste"></option>
-                </datalist>
+                <select id="dep-select" name="specialite_id" class="dep-input" required aria-describedby="err-dep">
+                  <option value="" disabled selected>Choisir une specialitée</option>
+                  <c:forEach var="s" items="${specialites}">
+                    <option value="${s.id}"}>
+                      <c:out value="${s.name}"/>
+                    </option>
+                  </c:forEach>
+                </select>
                 <p id="err-titre" class="err" aria-live="polite"></p>
               </div>
             </div>
@@ -277,7 +275,7 @@
           </div>
         </div>
 
-        <p class="mt-8 text-sm text-neutral-600">Déjà un compte ? <a href="${pageContext.request.contextPath}/login.jsp" class="font-medium text-black underline underline-offset-4">Login</a></p>
+        <p class="mt-8 text-sm text-neutral-600">Déjà un compte ? <a href="${pageContext.request.contextPath}/login" class="font-medium text-black underline underline-offset-4">Login</a></p>
       </form>
     </section>
 

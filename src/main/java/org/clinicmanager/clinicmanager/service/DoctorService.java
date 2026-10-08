@@ -1,5 +1,6 @@
 package org.clinicmanager.clinicmanager.service;
 
+import org.clinicmanager.clinicmanager.Model.Departement;
 import org.clinicmanager.clinicmanager.Model.Doctor;
 import org.clinicmanager.clinicmanager.Model.Patient;
 import org.clinicmanager.clinicmanager.Model.User;
@@ -7,6 +8,7 @@ import org.clinicmanager.clinicmanager.repository.HibernateImplJpa.DoctorRepoJpa
 import org.clinicmanager.clinicmanager.repository.HibernateImplJpa.UserRepoJpaImpl;
 import org.eclipse.tags.shaded.org.apache.xpath.operations.Bool;
 
+import java.util.List;
 import java.util.Optional;
 
 public class DoctorService {
@@ -27,4 +29,9 @@ public class DoctorService {
         Optional<Doctor> doctor = doctorRepoJpa.findById(id) ;
         return doctor.get() ;
     }
+
+    public Optional<List<Doctor>> getAll(){
+        return doctorRepoJpa.getAll() ;
+    }
+
 }

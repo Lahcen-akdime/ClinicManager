@@ -34,11 +34,8 @@ public class LoginController extends HttpServlet {
         SessionUser sessionUser = new SessionUser(user.getId(), user.getName(), user.getEmail() , user.getUserRole()) ;
         session.setAttribute(SessionKeys.USER,sessionUser);
         request.changeSessionId() ;
-        if (user.getUserRole().equals(Role.ADMIN)){
-            response.sendRedirect(request.getContextPath()+"/admin/Dashboard");
-            return;
-        }
-        request.getRequestDispatcher(user.getUserRole().name().toLowerCase()+
-                "/Dashboard.jsp").forward(request,response) ;
+            response.sendRedirect(request.getContextPath()+
+                                    "/"+user.getUserRole().name().toLowerCase()
+                                    +"/Dashboard");
     }
 }

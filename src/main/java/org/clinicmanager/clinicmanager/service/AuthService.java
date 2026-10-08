@@ -7,6 +7,7 @@ import org.clinicmanager.clinicmanager.Enum.GroupSuinguin;
 import org.clinicmanager.clinicmanager.Enum.Role;
 import org.clinicmanager.clinicmanager.Model.Doctor;
 import org.clinicmanager.clinicmanager.Model.Patient;
+import org.clinicmanager.clinicmanager.Model.Specialite;
 import org.clinicmanager.clinicmanager.Model.User;
 import org.clinicmanager.clinicmanager.exception.EmailAlreadyExistException;
 import org.clinicmanager.clinicmanager.exception.EmailNotExistException;
@@ -18,6 +19,7 @@ import org.clinicmanager.clinicmanager.util.ValidationUtil;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 public class AuthService {
@@ -25,6 +27,7 @@ public class AuthService {
     private static UserRepoJpaImpl userRepoJpa = new UserRepoJpaImpl() ;
     private static PatientService patientService = new PatientService() ;
     private static DoctorService doctorService = new DoctorService() ;
+    private static SpecialtyService specialtyService = new SpecialtyService() ;
 
     public User register(HttpServletRequest request)throws IOException{
         String name = request.getParameter("name") ;
@@ -67,10 +70,10 @@ public class AuthService {
 
     // login
 
-    public static void saveDoctor(HttpServletRequest request,User user){
+    public static void saveDoctor(HttpServletRequest request, User user){
         String matricule = request.getParameter("matricule") ;
-        String titre = request.getParameter("titre") ;
-        Doctor doctor = new Doctor(matricule,titre,user) ;
+        Specialite specialite = specialtyService.findById(Long.valueOf(request.getParameter("specialite_id")));
+        Doctor doctor = new Doctor(matricule,user,specialite) ;
         doctorService.save(doctor);
     }
     public static void savePatient(HttpServletRequest request,User user){
@@ -82,6 +85,10 @@ public class AuthService {
         GroupSuinguin groupSuinguin = GroupSuinguin.valueOf(request.getParameter("groupeSanguin")) ;
         Patient patient = new Patient(phone,cin,date_de_naissance,genre,adress,groupSuinguin,user) ;
         patientService.save(patient) ;
+    }
+
+    public List<User> getAll(){
+        return userRepoJpa.getAll() ;
     }
 
 }

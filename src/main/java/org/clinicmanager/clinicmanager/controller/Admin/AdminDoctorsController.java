@@ -23,16 +23,16 @@ public class AdminDoctorsController extends HttpServlet {
     private static DoctorService doctorService = new DoctorService() ;
 
     public void doGet(HttpServletRequest request , HttpServletResponse response)throws IOException, ServletException {
-        //List<PatientDto> patients = doctorService.getAllPatients() ;
-        //request.setAttribute("patients",patients);
+        List<Doctor> doctors = doctorService.getAll().get() ;
+        request.setAttribute("doctors",doctors);
         request.getRequestDispatcher("/admin/Doctors.jsp").forward(request,response);
     }
 
-    public void doPost(HttpServletRequest request , HttpServletResponse response){
+    public void doPost(HttpServletRequest request , HttpServletResponse response)throws IOException{
         String id = request.getParameter("id") ;
-        //Doctor doctor = doctorService.findById(Long.decode(id)) ;
-        //IdesactivateStrategie idesactivateStrategie = desactivateStrategy.doStrategy("doctor") ;
-        //idesactivateStrategie.changeStatus((Object) doctor , doctor.getUser().getActive());
+        Doctor doctor = doctorService.findById(Long.decode(id)) ;
+        IdesactivateStrategie idesactivateStrategie = desactivateStrategy.doStrategy("doctor") ;
+        idesactivateStrategie.changeStatus((Object) doctor , doctor.getUser().getActive());
+        response.sendRedirect(request.getContextPath()+"/admin/Doctors");
     }
-
 }

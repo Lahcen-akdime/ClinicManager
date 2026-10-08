@@ -2,11 +2,13 @@ package org.clinicmanager.clinicmanager.repository.HibernateImplJpa;
 
 import jakarta.persistence.EntityManager;
 import org.clinicmanager.clinicmanager.Model.Departement;
+import org.clinicmanager.clinicmanager.Model.Specialite;
 import org.clinicmanager.clinicmanager.config.JpaConnection;
 import org.clinicmanager.clinicmanager.repository.Jpa.DepartmentRepository;
 
 import javax.swing.text.html.parser.Entity;
 import java.util.List;
+import java.util.Optional;
 
 public class DepartementRepoJpaImpl implements DepartmentRepository {
 
@@ -30,5 +32,13 @@ public class DepartementRepoJpaImpl implements DepartmentRepository {
         List<Departement> departements = entityManager.createQuery("SELECT d FROM Departement d",Departement.class).getResultList() ;
         entityManager.getTransaction().commit();
         return departements ;
+    }
+
+    public Optional<Departement> findById(Long id){
+        EntityManager entityManager = JpaConnection.getEntityManager() ;
+        entityManager.getTransaction().begin() ;
+        Departement departement = entityManager.find(Departement.class,id) ;
+        entityManager.getTransaction().commit();
+        return Optional.ofNullable(departement) ;
     }
 }

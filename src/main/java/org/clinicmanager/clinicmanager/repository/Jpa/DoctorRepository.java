@@ -9,4 +9,5 @@ import java.util.Optional;
 public interface DoctorRepository {
     public Doctor save(Doctor doctor) ;
     public Optional<List<Doctor>> getAll() ;
+    public Optional<Doctor> findById(Long id) ;
 }
